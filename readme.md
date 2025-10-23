@@ -1,1 +1,2 @@
-Enterprise grade app for preparing high quality datasets 
+DataForge - Scalable End to End Big data processing, visualization and Analytics platform
+Enabled seamless, scalable data ingestion from streaming and batch sources, as measured by integration of 10+ disparate data feeds, by designing resilient pipelines with Apache Kafka and AWS Lambda. Improved analytics processing speed ,data reliability, and near-zero data loss, by deploying distributed storage (AWS S3 data lake) and transformation workflows using Apache Spark. Empowered stakeholders with real-time insights, as demonstrated by dashboard refresh rates under 2 seconds, by building a user-facing analytics platform using React.js and AWS API.
