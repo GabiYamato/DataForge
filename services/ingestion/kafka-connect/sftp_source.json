@@ -1,0 +1,19 @@
+{
+  "name": "dataforge-sftp-source",
+  "config": {
+    "connector.class": "io.confluent.connect.sftp.SftpCsvSourceConnector",
+    "tasks.max": "1",
+    "input.path": "/data/incoming",
+    "finished.path": "/data/processed",
+    "input.file.pattern": ".*\\.csv",
+    "kafka.topic": "events.sftp.partner",
+    "behavior.on.error": "FAIL",
+    "cleanup.policy": "NONE",
+    "schema.generation.enabled": "true",
+    "csv.first.row.as.header": "true",
+    "sftp.username": "${file:/opt/dataforge/creds.properties:sftp_user}",
+    "sftp.password": "${file:/opt/dataforge/creds.properties:sftp_password}",
+    "sftp.host": "sftp.partner.example.com",
+    "sftp.port": "22"
+  }
+}
