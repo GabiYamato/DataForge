@@ -1,0 +1,16 @@
+{
+  "name": "dataforge-s3-batch-source",
+  "config": {
+    "connector.class": "com.github.jcustenborder.kafka.connect.s3.S3SourceConnector",
+    "tasks.max": "1",
+    "s3.bucket": "${file:/opt/dataforge/creds.properties:s3_batch_bucket}",
+    "s3.region": "us-east-1",
+    "format.class": "com.github.jcustenborder.kafka.connect.utils.data.JsonDataConverter",
+    "value.converter.schemas.enable": "true",
+    "topic": "events.batch-drop",
+    "confluent.topic.bootstrap.servers": "b-1.example:9098,b-2.example:9098",
+    "confluent.topic.security.protocol": "SASL_SSL",
+    "confluent.topic.sasl.mechanism": "AWS_MSK_IAM",
+    "confluent.topic.sasl.jaas.config": "software.amazon.msk.auth.iam.IAMLoginModule required;"
+  }
+}

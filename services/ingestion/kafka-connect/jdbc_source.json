@@ -1,0 +1,20 @@
+{
+  "name": "dataforge-jdbc-source",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "tasks.max": "2",
+    "connection.url": "${file:/opt/dataforge/creds.properties:jdbc_url}",
+    "connection.user": "${file:/opt/dataforge/creds.properties:username}",
+    "connection.password": "${file:/opt/dataforge/creds.properties:password}",
+    "mode": "incrementing",
+    "incrementing.column.name": "updated_at",
+    "poll.interval.ms": "60000",
+    "topic.prefix": "events.jdbc.",
+    "validate.non.null": "false",
+    "table.whitelist": "orders,customers,transactions",
+    "numeric.precision.mapping": "true",
+    "errors.tolerance": "all",
+    "errors.deadletterqueue.topic.name": "dlq.jdbc",
+    "errors.deadletterqueue.context.headers.enable": "true"
+  }
+}
