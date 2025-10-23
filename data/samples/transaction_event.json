@@ -1,0 +1,11 @@
+{
+  "event_id": "evt-123",
+  "event_type": "transaction",
+  "occurred_at": "2024-01-01T00:00:00Z",
+  "payload": {
+    "amount": 42.5,
+    "currency": "USD",
+    "customer_id": "cust-789"
+  },
+  "source": "payments-service"
+}
